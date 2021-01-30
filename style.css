@@ -123,11 +123,7 @@ nav ul li a:hover, a.active{
     justify-content: space-between;
 }
 .button-style{
-    margin-top: 20px;
-}
-#booking-area{
-   
-    position: relative;
+    margin-top: 12px;
 }
 #confirmation-area{
     height: 100%;
