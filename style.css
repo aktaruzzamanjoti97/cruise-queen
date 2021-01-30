@@ -136,16 +136,9 @@ nav ul li a:hover, a.active{
     text-align: center;
 }
 
-#signup-button{
-    background-color:red;
-    border-radius: 10px;
-}
 p{
     font-size: 20px;
     font-weight: 300;
-}
-a{
-    font-weight: 500;
 }
 .button-increase{
     background-color: green;
