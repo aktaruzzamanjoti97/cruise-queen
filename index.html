@@ -63,9 +63,11 @@
                     <div>
                         <label for="">First Class ($150)</label>
                         <input id="firstClass-count" style="background-color:#CACFD2" class="inp-style inp-width"
-                            type="number" value="1" name="">
+                            type="number" value="0" name="">
                     </div>
                     <div class="plus-minus-btn">
+
+                        <!-- taking class for 'button increase' and 'button decrease' for first class seat -->
                         <button onclick="handlePassengerChange('firstClass',true)"
                             class="button-increase button-style">+</button> <button
                             onclick="handlePassengerChange('firstClass',false)"
@@ -77,9 +79,11 @@
                     <div>
                         <label for="">Economy ($100)</label>
                         <input id="economy-count" style="background-color: #CACFD2" class="inp-style inp-width"
-                            value="1" type="number" name="">
+                            value="0" type="number" name="">
                     </div>
                     <div class="plus-minus-btn">
+
+                        <!-- taking 'button-increase' and 'button decrease' class for economy seat -->
                         <button onclick="handlePassengerChange('economy',true)"
                             class="button-style button-increase">+</button> <button class="button-decrease"
                             onclick="handlePassengerChange('economy',false)">-</button>
@@ -91,7 +95,7 @@
                             <p>Subtotal</p>
                         </div>
                         <div class="right">
-                            <p id="sub-total">$500</p>
+                            <p id="sub-total">$00</p>
                         </div>
                     </div>
 
@@ -100,7 +104,7 @@
                             <p>Charge 10% VAT</p>
                         </div>
                         <div class="right">
-                            <p id="tax-total">$50</p>
+                            <p id="tax-total">$00</p>
                         </div>
                     </div>
                     <hr>
@@ -109,20 +113,28 @@
                             <h4>Total</h4>
                         </div>
                         <div class="right">
-                            <p id="grand-total">$550</p>
+                            <p id="grand-total">$00</p>
                         </div>
                     </div>
                 </div>
-                <button id="booking-button" class="btn-style">Book Now</button>
+
+                <!-- taking 'booking-button' id and 'booking-call' class for Book Now -->
+                <button id="booking-button" class="btn-style booking-call">Book Now</button>
             </div>
         </main>
         <script>
-            document.getElementById("booking-button").addEventListener("click",function(){
+            //working for click 'book now' to go the next page
+            document.getElementById("booking-button").addEventListener("click", function () {
                 document.getElementById("booking-area").style.display = "none";
                 document.body.style.backgroundImage = "url('white.png')";
                 document.getElementById("confirmation-area").style.display = "block";
             })
 
+
+
+
+
+            //function for click and condition for  first class and economy seat
             function handlePassengerChange(passenger, isIncrease) {
                 const passengerCount = getInputValue(passenger);
 
@@ -135,7 +147,6 @@
                 }
                 document.getElementById(passenger + "-count").value = passengerNewCount;
 
-
                 let passengerTotal = 0;
                 if (passenger == 'firstClass') {
                     passengerTotal = passengerNewCount * 150;
@@ -144,11 +155,12 @@
                     passengerTotal = passengerNewCount * 100;
                 }
 
+                //call function calculateTotal
                 calculateTotal();
 
             }
 
-
+            //function for get subtotal, tax, total count & get input
             function calculateTotal() {
                 const firstClassCount = getInputValue('firstClass');
                 const economyCount = getInputValue("economy");
@@ -164,12 +176,15 @@
                 document.getElementById("grand-total").innerText = "$" + total;
             }
 
-
+            //function for take input value
             function getInputValue(passenger) {
                 const passengerInput = document.getElementById(passenger + "-count");
                 const passengerCount = parseInt(passengerInput.value);
+
                 return passengerCount;
             }
+
+
 
         </script>
 
@@ -178,7 +193,7 @@
     </section>
 
     <section style="font-size: 25px;" id="confirmation-area">
-        <h1><span style="color: green">Congrats!</span> Your Ticket Has Been Booked Successfully.</h1>
+        <h1 style="background-color: darkgray;"><span style="color: green">Congrats!</span> Your Ticket Has Been Booked Successfully.</h1>
         <h3>Get In Updates of Our Booking Agency. Email : <span style="color: red">cursieqeen@gmail.com</span>.</h3>
         <h4>Please feel free to contact the customer support.</h4>
     </section>
