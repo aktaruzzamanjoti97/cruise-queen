@@ -119,16 +119,28 @@
                 </div>
 
                 <!-- taking 'booking-button' id for Book Now -->
-                <button id="booking-button" class="btn-style">Book Now</button>
+                <button onclick="redirectingAnotherPage()" id="booking-button" class="btn-style">Book Now</button>
             </div>
         </main>
         <script>
             //working for click 'book now' to go the next page
-            document.getElementById("booking-button").addEventListener("click", function () {
-                document.getElementById("booking-area").style.display = "none";
-                document.body.style.backgroundImage = "url('white.png')";
+            // document.getElementById("booking-button").addEventListener("click", function () {
+            //     document.getElementById("booking-area").style.display = "none";
+            //     document.body.style.backgroundImage = "url('white.png')";
+            //     document.getElementById("confirmation-area").style.display = "block";
+            // })
+            function redirectingAnotherPage() {
+                const firstClassCount = getInputValue('firstClass');
+                const economyCount = getInputValue("economy");
+
+                if (firstClassCount > 0 || economyCount > 0) {
+                    document.getElementById("booking-area").style.display = "none";
+                 document.body.style.backgroundImage = "url('white.png')";
                 document.getElementById("confirmation-area").style.display = "block";
-            })
+                }
+
+                
+            }
 
 
 
@@ -166,7 +178,9 @@
                 const economyCount = getInputValue("economy");
 
                 if(firstClassCount == 0 && economyCount ==0){
-                    alert(' "You Should At Least One Ticket Only" ');
+                    document.getElementById("booking-button").addEventListener("click", function(){
+                        alert(" 'You Have To Book At Least One Ticket' ");
+                    })
                 }
 
                 const subtotal = firstClassCount * 150 + economyCount * 100;
