@@ -125,3 +125,27 @@ nav ul li a:hover, a.active{
 .button-style{
     margin-top: 20px;
 }
+#booking-area{
+   
+    position: relative;
+}
+#confirmation-area{
+    height: 100%;
+    display: none;
+    margin: 350px auto;
+    text-align: center;
+}
+.decoration-remove{
+    text-decoration: none;
+}
+#signup-button{
+    background-color:red;
+    border-radius: 10px;
+}
+p{
+    font-size: 20px;
+    font-weight: 550;
+}
+a{
+    font-weight: 500;
+}
