@@ -125,10 +125,9 @@
         <script>
             
             function redirectingAnotherPage() {
-                // const firstClassCount = getInputValue('firstClass');
-                // const economyCount = getInputValue("economy");
+                const firstClassCount = getInputValue('firstClass');
+                const economyCount = getInputValue("economy");
         
-                ticketValidation(ticket);
 
                 if (firstClassCount > 0 || economyCount > 0) {
                     document.getElementById("booking-area").style.display = "none";
@@ -195,10 +194,6 @@
                 const ticketInput = document.getElementById(ticket + "-count");
                 const ticketCount = parseInt(ticketInput.value);
                 return ticketCount;
-            }
-
-            function ticketValidation(ticket){
-                const ticketCount = getInputValue(ticket);
             }
 
         </script>
