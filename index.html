@@ -123,15 +123,9 @@
             </div>
         </main>
         <script>
-            //working for click 'book now' to go the next page
-            // document.getElementById("booking-button").addEventListener("click", function () {
-            //     document.getElementById("booking-area").style.display = "none";
-            //     document.body.style.backgroundImage = "url('white.png')";
-            //     document.getElementById("confirmation-area").style.display = "block";
-            // })
+            
             function redirectingAnotherPage() {
-                // const firstClassCount = getInputValue('firstClass');
-                // const economyCount = getInputValue("economy");
+                
                 ticketValidation();
 
                 if (firstClassCount >= 0 || economyCount > 0) {
@@ -178,7 +172,7 @@
                 const firstClassCount = getInputValue('firstClass');
                 const economyCount = getInputValue("economy");
 
-                if(firstClassCount == 0 && economyCount ==0){
+                if(firstClassCount == 0 && economyCount == 0){
                     document.getElementById("booking-button").addEventListener("click", function(){
                         alert(" 'You Have To Book At Least One Ticket' ");
                     })
