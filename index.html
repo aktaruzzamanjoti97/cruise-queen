@@ -68,9 +68,9 @@
                     <div class="plus-minus-btn">
 
                         <!-- taking class for 'button increase' and 'button decrease' for first class seat -->
-                        <button onclick="handlePassengerChange('firstClass',true)"
+                        <button onclick="handleticketChange('firstClass',true)"
                             class="button-increase button-style">+</button> <button
-                            onclick="handlePassengerChange('firstClass',false)"
+                            onclick="handleticketChange('firstClass',false)"
                             class="button-decrease button-style">-</button>
                     </div>
                 </div>
@@ -84,9 +84,9 @@
                     <div class="plus-minus-btn">
 
                         <!-- taking 'button-increase' and 'button decrease' class for economy seat -->
-                        <button onclick="handlePassengerChange('economy',true)"
+                        <button onclick="handleticketChange('economy',true)"
                             class="button-style button-increase">+</button> <button class="button-decrease"
-                            onclick="handlePassengerChange('economy',false)">-</button>
+                            onclick="handleticketChange('economy',false)">-</button>
                     </div>
                 </div>
                 <div class="calculations">
@@ -130,10 +130,11 @@
             //     document.getElementById("confirmation-area").style.display = "block";
             // })
             function redirectingAnotherPage() {
-                const firstClassCount = getInputValue('firstClass');
-                const economyCount = getInputValue("economy");
+                // const firstClassCount = getInputValue('firstClass');
+                // const economyCount = getInputValue("economy");
+                ticketValidation();
 
-                if (firstClassCount > 0 || economyCount > 0) {
+                if (firstClassCount >= 0 || economyCount > 0) {
                     document.getElementById("booking-area").style.display = "none";
                  document.body.style.backgroundImage = "url('white.png')";
                 document.getElementById("confirmation-area").style.display = "block";
@@ -147,24 +148,24 @@
 
 
             //function for click and condition for  first class and economy seat
-            function handlePassengerChange(passenger, isIncrease) {
-                const passengerCount = getInputValue(passenger);
+            function handleticketChange(ticket, isIncrease) {
+                const ticketCount = getInputValue(ticket);
 
-                let passengerNewCount = passengerCount;
+                let ticketNewCount = ticketCount;
                 if (isIncrease == true) {
-                    passengerNewCount = passengerCount + 1;
+                    ticketNewCount = ticketCount + 1;
                 }
-                if (isIncrease == false && passengerCount > 0) {
-                    passengerNewCount = passengerCount - 1;
+                if (isIncrease == false && ticketCount > 0) {
+                    ticketNewCount = ticketCount - 1;
                 }
-                document.getElementById(passenger + "-count").value = passengerNewCount;
+                document.getElementById(ticket + "-count").value = ticketNewCount;
 
-                let passengerTotal = 0;
-                if (passenger == 'firstClass') {
-                    passengerTotal = passengerNewCount * 150;
+                let ticketTotal = 0;
+                if (ticket == 'firstClass') {
+                    ticketTotal = ticketNewCount * 150;
                 }
-                if (passenger == 'economy') {
-                    passengerTotal = passengerNewCount * 100;
+                if (ticket == 'economy') {
+                    ticketTotal = ticketNewCount * 100;
                 }
 
                 //call function calculateTotal
@@ -194,13 +195,15 @@
             }
 
             //function for take input value
-            function getInputValue(passenger) {
-                const passengerInput = document.getElementById(passenger + "-count");
-                const passengerCount = parseInt(passengerInput.value);
-                return passengerCount;
+            function getInputValue(ticket) {
+                const ticketInput = document.getElementById(ticket + "-count");
+                const ticketCount = parseInt(ticketInput.value);
+                return ticketCount;
             }
 
-
+            function ticketValidation(){
+                const ticketCount = getInputValue(ticket);
+            }
 
         </script>
 
