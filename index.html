@@ -131,7 +131,6 @@
 
                 if (firstClassCount > 0 || economyCount > 0) {
                     document.getElementById("booking-area").style.display = "none";
-                 document.body.style.backgroundImage = "url('white.png')";
                 document.getElementById("confirmation-area").style.display = "block";
                 }
 
@@ -203,9 +202,11 @@
     </section>
 
     <section style="font-size: 25px;" id="confirmation-area">
-        <h1 style="background-color: darkgray;"><span style="color: green">Congrats!</span> Your Ticket Has Been Booked Successfully.</h1>
+       <div id="confirmation-show" class="container">
+        <h1><span style="color: green">Congrats!</span> Your Ticket Has Been Booked Successfully.</h1>
         <h3>Get In Updates of Our Booking Agency. Email : <span style="color: red">cursieqeen@gmail.com</span>.</h3>
         <h4>Please feel free to contact the customer support.</h4>
+       </div>
     </section>
 </body>
 
