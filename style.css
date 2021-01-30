@@ -12,8 +12,6 @@ body{
     background-position: center center;
     background-attachment: scroll;
     background-size: cover;
-    height: 100%;
-    width: 100%;
 }
 nav{
     height: 50px;
@@ -137,17 +135,30 @@ nav ul li a:hover, a.active{
     margin: 350px auto;
     text-align: center;
 }
-.decoration-remove{
-    text-decoration: none;
-}
+
 #signup-button{
     background-color:red;
     border-radius: 10px;
 }
 p{
     font-size: 20px;
-    font-weight: 550;
+    font-weight: 300;
 }
 a{
     font-weight: 500;
+}
+.button-increase{
+    background-color: green;
+    color: white;
+    font-size: 30px;
+    border-radius: 5px;
+    padding: 0px 5px;
+}
+.button-decrease{
+    background-color: red;
+    color: white;
+    padding: 1px 10px;
+    border-radius: 5px;
+    font-size: 30px;
+    border: 0;
 }

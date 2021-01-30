@@ -11,7 +11,6 @@
         rel="stylesheet">
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="bootstrap.min.css">
 </head>
 
 <body>
@@ -21,10 +20,10 @@
         <header class="container">
             <nav>
                 <ul>
-                    <li><a class="decoration-remove" href="#">Home</a></li>
-                    <li><a class="decoration-remove" href="#">About Us</a></li>
-                    <li><a class="decoration-remove" href="#">Contact</a></li>
-                    <li><a id="signup-button" class="decoration-remove" class="active" href="#">Sign Up</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a id="signup-button" class="active" href="#">Sign Up</a></li>
                 </ul>
             </nav>
         </header>
@@ -68,9 +67,9 @@
                     </div>
                     <div class="plus-minus-btn">
                         <button onclick="handlePassengerChange('firstClass',true)"
-                            class="btn btn-success button-style">+</button> <button
+                            class="button-increase button-style">+</button> <button
                             onclick="handlePassengerChange('firstClass',false)"
-                            class="btn btn-danger button-style">-</button>
+                            class="button-decrease button-style">-</button>
                     </div>
                 </div>
 
@@ -82,9 +81,8 @@
                     </div>
                     <div class="plus-minus-btn">
                         <button onclick="handlePassengerChange('economy',true)"
-                            class="btn btn-success button-style">+</button> <button
-                            onclick="handlePassengerChange('economy',false)"
-                            class="btn btn-danger button-style">-</button>
+                            class="button-style button-increase">+</button> <button class="button-decrease"
+                            onclick="handlePassengerChange('economy',false)">-</button>
                     </div>
                 </div>
                 <div class="calculations">
@@ -115,7 +113,7 @@
                         </div>
                     </div>
                 </div>
-                <button id="booking-button" class="btn-style btn-warning">Book Now</button>
+                <button class="btn-style">Book Now</button>
             </div>
         </main>
         <script>
@@ -180,8 +178,8 @@
     </section>
 
     <section id="confirmation-area">
-        <h1 class="bg-info"><span class="text-success">Congrats!</span> Your Ticket Has Been Booked Successfully.</h1>
-        <h3>Get In Updates of Our Booking Agency. Email : <span class="text-danger">cursieqeen@gmail.com</span></h3>
+        <h1><span style="color: green">Congrats!</span> Your Ticket Has Been Booked Successfully.</h1>
+        <h3>Get In Updates of Our Booking Agency. Email : <span style="color: red">cursieqeen@gmail.com</span></h3>
         <h4>Please feel free to contact the customer support</h4>
     </section>
 </body>
